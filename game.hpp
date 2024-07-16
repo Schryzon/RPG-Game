@@ -31,17 +31,21 @@ class Game{
     // Using template to accept any types
     template<typename Attacker, typename Defender>
     void attack(Attacker attacker, Defender defender){
+        // The attack function cannot be made into a method as it...
+        // makes a circular #include between headers and classes.
+
         double dynamicDamage;
         double dodgeChance = static_cast<double>(defender.agl) / (defender.agl + attacker.agl);
 
         // Check if defender dodges the attack
         if (static_cast<double>(rand()) / RAND_MAX < dodgeChance) {
             dynamicDamage = 0; // Defender dodges the attack
-            cout<<defender.name<<" dodged the attack!"<<endl;
+            cout<<defender.name<<" dodged the attack!"<<endl<<endl;
+            return;
         }
 
         // Calculate base damage
-        double baseDamage = attacker.atk - defender.def;
+        double baseDamage = attacker.atk - defender.def * 10;
 
         if(defender.defending == true){
             defender.defending = false;
@@ -51,7 +55,7 @@ class Game{
 
         // Ensure there's at least a base damage multiplier
         if (baseDamage <= 0) {
-            baseDamage = 1;
+            baseDamage = 10;
         }
 
         // Scale damage based on HP
@@ -90,6 +94,8 @@ class Game{
                 }
                 else if(playerAction == "run"){
                     player.run();
+                    winner = ai.name;
+                    break;
                 }
                 else if(playerAction == "skip"){
                     player.skip();
@@ -99,7 +105,7 @@ class Game{
                     player.skip();
                 }
 
-                // Check AI health
+                // Check AI health, on progress
                 if(ai.hp <= 0){
                     winner = "You";
                     playing = false;
@@ -118,18 +124,20 @@ class Game{
                 }
                 else if(aiAction == "run"){
                     ai.run();
+                    winner = "You";
+                    break;
                 }
                 else if(aiAction == "skip"){
                     ai.skip();
                 }
 
                 if(player.hp <= 0){
-                    winner = "The enemy";
+                    winner = ai.name;
                     playing = false;
                     break;
                 }
             }
-            cout<<winner<<"won the fight!";
+            cout<<winner<<" won the fight!";
             getch();
         }
 };
