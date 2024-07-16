@@ -1,0 +1,65 @@
+[
+    {
+        "name":"SEI-RO",
+        "desc":"Manusia hybrid - Kecepatan.",
+        "tier":"HARD",
+        "hp":80,
+        "atk":14,
+        "def":8,
+        "agl":20
+    },
+    {
+        "name":"KOU-RAI",
+        "desc":"Manusia hybrid - Kecerdasan.",
+        "tier":"HARD",
+        "hp":100,
+        "atk":19,
+        "def":14,
+        "agl":7
+    },
+    {
+        "name":"AKA-ZUMI",
+        "desc":"Manusia hybrid - Kelincahan.",
+        "tier":"HARD",
+        "hp":100,
+        "atk":20,
+        "def":8,
+        "agl":17
+    },
+    {
+        "name":"SHIN-KURO",
+        "desc":"Manusia hybrid - Kekuatan.",
+        "tier":"HARD",
+        "hp":120,
+        "atk":25,
+        "def":10,
+        "agl":11
+    },
+    {
+        "name":"CHI-SAKI",
+        "desc":"Manusia hybrid - Keberanian.",
+        "tier":"HARD",
+        "hp":130,
+        "atk":27,
+        "def":16,
+        "agl":0
+    },
+    {
+        "name":"FEI-XANG",
+        "desc":"Manusia hybrid - Kesatuan.",
+        "tier":"HARD",
+        "hp":105,
+        "atk":33,
+        "def":20,
+        "agl":15
+    },
+    {
+        "name":"LRSF",
+        "desc":"Land of Revolution Special Forces.",
+        "tier":"HARD",
+        "hp":100,
+        "atk":30,
+        "def":17,
+        "agl":23
+    }
+]
